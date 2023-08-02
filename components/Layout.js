@@ -7,10 +7,10 @@ export default function Layout({ children }) {
         <Link href="/">
           <a>
             <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
+              <span>Test</span>
+              <span>Next Test</span>
             </h1>
-            <h2>Spread The Joy</h2>
+            <h2>Next.js with Contentful test Proj</h2>
           </a>
         </Link>
       </header>

@@ -35,6 +35,12 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
+const imageStyle = {
+  maxWidth: '100%',
+  height: 'auto'
+}
+
+
 export default function RecipeDetails({ recipe }) {
   const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields
   console.log(method)
@@ -46,6 +52,7 @@ export default function RecipeDetails({ recipe }) {
           src={'https:' + featuredImage.fields.file.url}
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
+          style={imageStyle}
         />
         <h2>{ title }</h2>
       </div>

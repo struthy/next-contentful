@@ -4,6 +4,11 @@ import Image from 'next/image'
 export default function RecipeCard({ recipe }) {
   const { title, slug, cookingTime, thumbnail } = recipe.fields
 
+  const imageStyle = {
+    maxWidth: '100%',
+    height: 'auto'
+  }
+
   return (
     <div className="card">
       <div className="featured">
@@ -11,6 +16,7 @@ export default function RecipeCard({ recipe }) {
           src={'https:' + thumbnail.fields.file.url}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
+          style={imageStyle}
         />
       </div>
       <div className="content">
@@ -19,7 +25,7 @@ export default function RecipeCard({ recipe }) {
           <p>Takes approx { cookingTime } mins to make</p>
         </div>
         <div className="actions">
-          <Link href={'/recipes/' + slug}><a>Cook this</a></Link>
+          <Link href={'/recipes/' + slug}><span>Cook this</span></Link>
         </div>
       </div>
 
@@ -51,11 +57,15 @@ export default function RecipeCard({ recipe }) {
           display: flex;
           justify-content: flex-end;
         }
-        .actions a {
+        .actions span {
           color: #fff;
           background: #f01b29;
           padding: 16px 24px;
           text-decoration: none;
+        }
+
+        .featured img {
+          max-width: 100%;
         }
       `}</style>
     </div>
